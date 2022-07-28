@@ -2,15 +2,20 @@
 Commands and reference material useful for the CRTP course and Active Directory.
 
 - [CRTP AD Attacks](#CRTP-Skid)
-  - [Defense Evasion](#Defense-Evasion)  
+  - [Shell Prep & Defense Evasion](#Shell-Prep-&-Defense-Evasion)  
+    - [Invisi-Shell](#Invisi-Shell)
     - [AMSI Bypass](#AMSI-Bypass)
 
 
-## Defense Evasion
+## Shell Prep & Defense Evasion
 
-####Invisi-Shell
-
-## AMSI Bypass 
+#### Invisi-Shell (https://github.com/OmerYa/Invisi-Shell)
+Invisi-Shell is used in the labs to bypass PowerShell security features by hooking .Net assemblies. Invisi-Shell uses a DLL and batch file for execution (two batch files dependant on current privilege level. Note - Invisi-shell may break certain functionality of certain programs run within shell.
+```
+C:\Path\RunWithRegistryNonAdmin.bat 
+C:\Path\RunWithPathAsAdmin.bat
+```
+#### AMSI Bypass 
 
 #### ‘Plain’ AMSI bypass example:
 ```
