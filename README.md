@@ -2,7 +2,13 @@
 Commands and reference material useful for the CRTP course and Active Directory.
 
 - [CRTP AD Attacks](#CRTP-Skid)
-  - [AMSI Bypass](#AMSI-Bypass)
+  - [Defense Evasion](#Defense-Evasion)  
+    - [AMSI Bypass](#AMSI-Bypass)
+
+
+## Defense Evasion
+
+####Invisi-Shell
 
 ## AMSI Bypass 
 
