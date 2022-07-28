@@ -1,7 +1,7 @@
 # CRTP_Skid
-Commands and reference material useful for the CRTP course. 
+Commands and reference material useful for the CRTP course and Active Directory.
 
-- [CRTP AD Attacks](#CRTP_Skid)
+- [CRTP AD Attacks](#CRTP-Skid)
   - [AMSI Bypass](#AMSI-Bypass)
 
 ## AMSI Bypass 
