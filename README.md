@@ -10,7 +10,7 @@ Commands and reference material useful for the CRTP course and Active Directory.
 ## Shell Prep & Defense Evasion
 
 #### Invisi-Shell (https://github.com/OmerYa/Invisi-Shell)
-Invisi-Shell is used in the labs to bypass PowerShell security features by hooking .Net assemblies. Invisi-Shell uses a DLL and batch file for execution (two batch files dependant on current privilege level. Note - Invisi-shell may break certain functionality of certain programs run within shell.
+Invisi-Shell is used in the labs to bypass PowerShell security features by hooking .Net assemblies. Invisi-Shell a batch file for execution (two batch files dependant on current privilege level) that reference the invisi-shell DLL. Note - Invisi-shell may break certain functionality of certain programs run within shell.
 ```
 C:\Path\RunWithRegistryNonAdmin.bat 
 C:\Path\RunWithPathAsAdmin.bat
