@@ -6,11 +6,13 @@ Commands and reference material useful for the CRTP course and Active Directory.
     - [Invisi-Shell](#Invisi-Shell)
     - [AMSI Bypass](#AMSI-Bypass)
 - [Domain Enumeration](#Domain-Enumeration)  
+  - [Powerview](#Powerview)
+  - [AD PowerShell Module](#AD-Module)
 
 ## Shell Prep & Defense Evasion
 
 #### Invisi-Shell (https://github.com/OmerYa/Invisi-Shell)
-Invisi-Shell is used in the labs to bypass PowerShell security features by hooking .Net assemblies. Invisi-Shell a batch file for execution (two batch files dependant on current privilege level) that reference the invisi-shell DLL. Note - Invisi-shell may break certain functionality of certain programs run within shell.
+Invisi-Shell is used in the labs to bypass PowerShell security features by hooking .NET assemblies. Invisi-Shell a batch file for execution (two batch files dependant on current privilege level) that reference the invisi-shell DLL. Note - Invisi-shell may break certain functionality of certain programs run within shell.
 ```
 C:\Path\RunWithRegistryNonAdmin.bat 
 C:\Path\RunWithPathAsAdmin.bat
@@ -35,3 +37,5 @@ sET-ItEM ( 'V'+'aR' +  'IA' + 'blE:1q2'  + 'uZx'  ) ( [TYpE](  "{1}{0}"-F'F','rE
 ```
 ## Domain Enumeration 
 #### Powerview 
+```
+```
