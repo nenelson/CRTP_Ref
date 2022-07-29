@@ -41,3 +41,4 @@ sET-ItEM ( 'V'+'aR' +  'IA' + 'blE:1q2'  + 'uZx'  ) ( [TYpE](  "{1}{0}"-F'F','rE
 #### Powerview 
 ```
 ```
+#### Active Directory PowerShell Module (https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps)
