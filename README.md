@@ -5,9 +5,11 @@ Commands and reference material useful for the CRTP course and Active Directory.
   - [Shell Prep & Defense Evasion](#Shell-Prep-&-Defense-Evasion)  
     - [Invisi-Shell](#Invisi-Shell)
     - [AMSI Bypass](#AMSI-Bypass)
-- [Domain Enumeration](#Domain-Enumeration)  
-  - [Powerview](#Powerview)
-  - [AD PowerShell Module](#AD-Module)
+  - [Domain Enumeration](#Domain-Enumeration)  
+    - [Powerview](#Powerview)
+      - [Domain](#Domain)
+      - [Users & Groups](#Users-&-Groups)
+    - [AD PowerShell Module](#AD-Module)
 
 ## Shell Prep & Defense Evasion
 
