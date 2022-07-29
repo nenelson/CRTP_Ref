@@ -9,7 +9,7 @@ Commands and reference material useful for the CRTP course and attacking Active 
     - [Powerview](#Powerview)
       - [Domain](#Domain)
       - [Users & Groups](#Users-&-Groups)
-    - [AD PowerShell Module](#AD-Module)
+    - [AD PowerShell Module](#Active-Directory-PowerShell-Module)
 
 ## Shell Prep & Defense Evasion
 
