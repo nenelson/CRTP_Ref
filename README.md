@@ -1,5 +1,5 @@
 # CRTP_Skid
-Commands and reference material useful for the CRTP course and Active Directory.
+Commands and reference material useful for the CRTP course and attacking Active Directory in general.
 
 - [CRTP AD Attacks](#CRTP-Skid)
   - [Shell Prep & Defense Evasion](#Shell-Prep-&-Defense-Evasion)  
