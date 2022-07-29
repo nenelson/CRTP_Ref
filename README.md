@@ -8,8 +8,8 @@ Commands and reference material useful for the CRTP course and Active Directory 
   - [Domain Enumeration](#Domain-Enumeration)  
     - [Powerview](#Powerview)
       - [Domain](#Domain-Enum)
-      - - [Domain Trust](#Domain-Trust)
-      - [Users Groups Computers](#Users,-Groups,-&-Computers)
+      - [Domain Trust](#Domain-Trust)
+      - [Users Groups Computers](#Users-Groups-Computers)
     - [AD PowerShell Module](#Active-Directory-PowerShell-Module)
 
 ## Shell Prep & Defense Evasion
@@ -60,8 +60,35 @@ Get-NetForestTrust
 Get-NetForestTrust -Forest <domain name>
 Get-NetForestDomain -Verbose | Get-NetDomainTrust
 ```
-#### Users, Groups, & Computers
+#### Users Groups Computers 
 ```powershell 
+Get-NetDomainController
+Get-NetDomainController | select-object Name
+Get-NetUser
+Get-NetUser -Username <username>
+Get-NetUser | select samaccountname
+Get-NetUser | select samaccountname, lastlogon, pwdlastset
+Get-NetUser | select samaccountname, lastlogon, pwdlastset | Sort-Object -Property lastlogon
+Get-NetUser | select samaccountname, memberof
+get-userproperty -Properties pwdlastset
+Find-UserField -SearchField Description -SearchTerm "built"
+Get-netuser | Select-Object samaccountname,description
+Get-NetComputer
+Get-NetComputer -FullData
+Get-NetComputer -Computername <computername> -FullData
+Get-NetComputer -OperatingSystem "*Server 2016*"
+Get-NetComputer -fulldata | select samaccountname, operatingsystem, operatingsystemversion
+Get-NetGroup
+Get-NetGroup -GroupName *admin*
+Get-NetGroup -Domain <domain>
+Get-NetGroupMember -Groupname "Domain Admins" -Recurse
+Get-NetGroupMember -Groupname "Domain Admins" -Recurse | select MemberName
+Get-NetGroup -Username <username>
+Get-NetlocalGroup -Computername <computername> -ListGroups
+Get-NetlocalGroup -Computername <computername> -Recurse
+Get-NetLoggedon -Computername <computername>
+Get-LoggedonLocal -Computername <computername>
+Get-LastLoggedOn -ComputerName <computername>
 ```
 
 #### Active Directory PowerShell Module
