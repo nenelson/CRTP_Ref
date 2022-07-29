@@ -20,6 +20,7 @@ C:\Path\RunWithRegistryNonAdmin.bat
 C:\Path\RunWithPathAsAdmin.bat
 ```
 ### AMSI Bypass 
+More AMSI Bypass techniques [here](#https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell)
 
 #### ‘Plain’ AMSI bypass example:
 ```powershell
