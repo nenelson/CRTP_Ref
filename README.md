@@ -36,6 +36,7 @@ sET-ItEM ( 'V'+'aR' +  'IA' + 'blE:1q2'  + 'uZx'  ) ( [TYpE](  "{1}{0}"-F'F','rE
 ```
 ## Domain Enumeration 
 #### Powerview 
+Powerview is referenced quite a bit in the course material, but the Microsoft-signed AD PowerShell Module can also be used and will typically evade AV sigs where PowerView may not if using an unmodified version. 
 ```
 ```
 #### Active Directory PowerShell Module
