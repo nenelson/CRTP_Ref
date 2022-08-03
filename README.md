@@ -11,7 +11,7 @@ Commands and reference material useful for the CRTP course and Active Directory 
       - [Domain Trust](#Domain-Trust)
       - [Users Groups Computers](#Users-Groups-Computers)
       - [Share Enum](#Share-Enum)
-      - [GPO](#GPO)
+      - [GPO](#Group-Policy-Objects)
       - [Access Control Lists](#Access-Control-Lists)
     - [AD PowerShell Module](#Active-Directory-PowerShell-Module)
 
@@ -110,6 +110,19 @@ Get-PathAcl -Path \\<Domain controller>\sysvol
 Invoke-ACLScanner -ResolveGUIDs
 Invoke-ACLScanner -ResolveGUIDs | select IdentityReference, ObjectDN, ActiveDirectoryRights | fl
 Invoke-ACLScanner | Where-Object {$_.IdentityReference –eq [System.Security.Principal.WindowsIdentity]::GetCurrent().Name}
+```
+
+#### Group Policy Objects 
+
+```powershell 
+Get-NetGPO
+Get-NetGPO -Computername <computername>
+Get-NetGPOGroup
+Find-GPOComputerAdmin -Computername <computername>
+Find-GPOLocation -Username user -Verbose
+Get-NetOU -Fulldata
+Get-NetOU StudentMachines | %{Get-NetComputer -ADSPath $_}
+Get-NetGPO -GPOname "{<gplink>}"
 ```
 
 #### Active Directory PowerShell Module
