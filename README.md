@@ -14,6 +14,7 @@ Commands and reference material useful for the CRTP course and Active Directory 
       - [GPO](#Group-Policy-Objects)
       - [Access Control Lists](#Access-Control-Lists)
     - [AD PowerShell Module](#Active-Directory-PowerShell-Module)
+    - [Other Tooling](#Tooling)
 
 ## Shell Prep & Defense Evasion
 
@@ -127,3 +128,7 @@ Get-NetGPO -GPOname "{<gplink>}"
 
 #### Active Directory PowerShell Module
 [Microsofts AD PowerShell](https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps) module can also be used for domain enumeration. 
+
+## Tooling 
+
+I found that the covered tooling in the course is sufficient for achieving CLI access across the hosts in the exam. However, some of the techniques and tools used in the course will not work in the exam due to .NET dependancies. 
