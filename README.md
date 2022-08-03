@@ -10,6 +10,9 @@ Commands and reference material useful for the CRTP course and Active Directory 
       - [Domain](#Domain-Enum)
       - [Domain Trust](#Domain-Trust)
       - [Users Groups Computers](#Users-Groups-Computers)
+      - [Share Enum](#Share-Enum)
+      - [GPO](#GPO)
+      - [Access Control Lists](#Access-Control-Lists)
     - [AD PowerShell Module](#Active-Directory-PowerShell-Module)
 
 ## Shell Prep & Defense Evasion
@@ -89,6 +92,24 @@ Get-NetlocalGroup -Computername <computername> -Recurse
 Get-NetLoggedon -Computername <computername>
 Get-LoggedonLocal -Computername <computername>
 Get-LastLoggedOn -ComputerName <computername>
+```
+#### Share Enum
+
+```powershell 
+Invoke-ShareFinder -Verbose
+Invoke-ShareFinder -ExcludeStandard -ExcludePrint -ExcludeIPC
+Invoke-FileFinder -Verbose
+Get-NetFileServer
+```
+#### Access Control Lists
+
+```powershell 
+Get-ObjectACL -SamAccountName <accountname> -ResolveGUIDS
+Get-ObjectACL -ADSprefix ‘CN=Administrator,CN=Users’ -Verbose
+Get-PathAcl -Path \\<Domain controller>\sysvol
+Invoke-ACLScanner -ResolveGUIDs
+Invoke-ACLScanner -ResolveGUIDs | select IdentityReference, ObjectDN, ActiveDirectoryRights | fl
+Invoke-ACLScanner | Where-Object {$_.IdentityReference –eq [System.Security.Principal.WindowsIdentity]::GetCurrent().Name}
 ```
 
 #### Active Directory PowerShell Module
