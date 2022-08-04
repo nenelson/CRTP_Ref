@@ -15,7 +15,7 @@ Commands and reference material useful for the CRTP course and Active Directory 
       - [Access Control Lists](#Access-Control-Lists)
     - [AD PowerShell Module](#Active-Directory-PowerShell-Module)
     - [Other Tooling](#Tooling)
-     - [Bloodhound](#Bloodhound)
+      - [Bloodhound](#Bloodhound)
 
 ## Shell Prep & Defense Evasion
 
