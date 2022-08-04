@@ -135,7 +135,7 @@ Get-NetGPO -GPOname "{<gplink>}"
 I found that the covered tooling in the course is sufficient for achieving CLI access across the hosts in the exam. However, some of the techniques and tools used in the course will not work in the exam due to .NET dependancies. 
 
 
-#### Bloodhound (OSX Specific) 
+#### Bloodhound
 Set up Bloodhound/Neo4J on your host before the exam. I ran in to an issue involving OpenJDK vesioning with Neo4J on Catalina, as well as an issue ingesting the collected data using the latest version of Bloodhound. I found the below workarounds. 
 - Bloodhound version 9.4.0 
   - If you run in to Bloodhound error "file created from incompatible collector" upon import of collected .json files, try running an older version of Bloodhound. See [this](https://github.com/fox-it/Bloodhound.py/issues/69) 
