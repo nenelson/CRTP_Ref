@@ -136,11 +136,11 @@ I found that the covered tooling in the course is sufficient for achieving CLI a
 
 
 #### Bloodhound (OSX Specific) 
-As the course recommended, I set up the Neo4J DB and Bloodhound interface on my macbook and only ran collectors in the exam environment. This saved time. I did run in to an issue installing Neo4J on Catalina, as well as an issue importing the collected data in to the latest version of Bloodhound. I found the below stable for me. 
+Set up Bloodhound/Neo4J on your host before the exam. I ran in to an issue involving OpenJDK vesioning with Neo4J on Catalina, as well as an issue ingesting the collected data using the latest version of Bloodhound. I found the below workarounds. 
 - Bloodhound version 9.4.0 
   - If you run in to Bloodhound error "file created from incompatible collector" upon import of collected .json files, try running an older version of Bloodhound. See [this](https://github.com/fox-it/Bloodhound.py/issues/69) 
 - Neo4J 4.4.9
-  - Install older version of OpenJKD 11+ if you run in to issues. See [this](https://gist.github.com/drm317/3e2a9ce4ba1288c4fbaab1e534d71133)
+  - Install older version of OpenJDK 11+ if you run in to issues. See [this](https://gist.github.com/drm317/3e2a9ce4ba1288c4fbaab1e534d71133)
 
 ```powershell 
 #Start neo4j 
