@@ -94,6 +94,11 @@ Get-NetlocalGroup -Computername <computername> -Recurse
 Get-NetLoggedon -Computername <computername>
 Get-LoggedonLocal -Computername <computername>
 Get-LastLoggedOn -ComputerName <computername>
+Invoke-UserHunter
+Invoke-UserHunter -GroupName <name>
+Invoke-UserHunter -CheckAccess
+Invoke-UserHunter -Stealth
+Find-LocalAdminACcess -Verbose
 ```
 #### Share Enum
 
