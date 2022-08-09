@@ -16,6 +16,7 @@ Commands and reference material useful for the CRTP course and Active Directory 
     - [AD PowerShell Module](#Active-Directory-PowerShell-Module)
     - [Other Tooling](#Tooling)
       - [Bloodhound](#Bloodhound)
+      - [Mimikatz](#Mimikatz)
 
 ## Shell Prep & Defense Evasion
 
