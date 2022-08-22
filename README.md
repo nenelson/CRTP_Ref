@@ -159,5 +159,5 @@ Invoke-Bloodhound -CollectionMethod all -Verbose
 Invoke-Bloodhound -CollectionMethod LoggedOn -Verbose
 ```
 ## Links
-[User Hunting](https://sixdub.medium.com/derivative-local-admin-cdd09445aac8)
-[PowerShell Constrained Language Mode](https://devblogs.microsoft.com/powershell/powershell-constrained-language-mode/)
+- [User Hunting](https://sixdub.medium.com/derivative-local-admin-cdd09445aac8)
+- [PowerShell Constrained Language Mode](https://devblogs.microsoft.com/powershell/powershell-constrained-language-mode/)
