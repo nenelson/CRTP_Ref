@@ -17,6 +17,8 @@ Commands and reference material useful for the CRTP course and Active Directory 
     - [Other Tooling](#Tooling)
       - [Bloodhound](#Bloodhound)
       - [Mimikatz](#Mimikatz)
+    - [Links](#Links)
+      - [User Hunting](#User_Hunting)
 
 ## Shell Prep & Defense Evasion
 
@@ -156,3 +158,5 @@ Set up Bloodhound/Neo4J on your host before the exam. I ran in to an issue invol
 Invoke-Bloodhound -CollectionMethod all -Verbose
 Invoke-Bloodhound -CollectionMethod LoggedOn -Verbose
 ```
+## Links
+[User Hunting](https://sixdub.medium.com/derivative-local-admin-cdd09445aac8)
