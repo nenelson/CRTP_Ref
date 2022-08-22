@@ -161,3 +161,4 @@ Invoke-Bloodhound -CollectionMethod LoggedOn -Verbose
 ## Links
 - [User Hunting](https://sixdub.medium.com/derivative-local-admin-cdd09445aac8)
 - [PowerShell Constrained Language Mode](https://devblogs.microsoft.com/powershell/powershell-constrained-language-mode/)
+- [PowerShell Obfuscation (Invoke-Obfuscation)](https://github.com/danielbohannon/Invoke-Obfuscation) 
