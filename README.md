@@ -147,10 +147,29 @@ Techniques relevant to abusing AD/system misconfiguration and normal Windows fun
 - [PowerUp](https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc)
 - [PrivEsx](https://github.com/enjoiz/Privesc)
 
+#### PowerView
+
 ```powershell 
 Get-ServiceUnquoted -Verbose 
 Get-ModifiableServiceFile -Verbose
 Get-ModifiableService -Verbose 
+```
+
+####PowerUp
+```powershell 
+Invoke-AllChecks
+```
+####Privesc
+```powershell 
+Invoke-PrivEsc
+```
+####PrivescCheck
+```powershell 
+Invoke-Privesc Check
+```
+####PEASS-ng
+```powershell 
+winPEASx64.exe
 ```
 ## Tooling 
 
