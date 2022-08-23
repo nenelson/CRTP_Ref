@@ -155,19 +155,19 @@ Get-ModifiableServiceFile -Verbose
 Get-ModifiableService -Verbose 
 ```
 
-####PowerUp
+#### PowerUp
 ```powershell 
 Invoke-AllChecks
 ```
-####Privesc
+#### Privesc
 ```powershell 
 Invoke-PrivEsc
 ```
-####PrivescCheck
+#### PrivescCheck
 ```powershell 
 Invoke-Privesc Check
 ```
-####PEASS-ng
+#### PEASS-ng
 ```powershell 
 winPEASx64.exe
 ```
