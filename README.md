@@ -142,8 +142,16 @@ Get-NetGPO -GPOname "{<gplink>}"
 - [Microsofts AD PowerShell](https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps) module can also be used for domain enumeration. 
 
 ## Privilege Escalation
+Techniques relevant to abusing AD/system misconfiguration and normal Windows functionality to achieve privesc. 
+#### Privesc tools/scripts
+- [PowerUp](https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc)
+- [PrivEsx](https://github.com/enjoiz/Privesc)
 
-
+```powershell 
+Get-ServiceUnquoted -Verbose 
+Get-ModifiableServiceFile -Verbose
+Get-ModifiableService -Verbose 
+```
 ## Tooling 
 
 I found that the covered tooling in the course is sufficient for achieving CLI access across the hosts in the exam. However, some of the techniques and tools used in the course will not work in the exam due to .NET dependancies. 
