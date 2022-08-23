@@ -139,7 +139,7 @@ Get-NetGPO -GPOname "{<gplink>}"
 ```
 
 #### Active Directory PowerShell Module
-[Microsofts AD PowerShell](https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps) module can also be used for domain enumeration. 
+- [Microsofts AD PowerShell](https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps) module can also be used for domain enumeration. 
 
 ## Privilege Escalation
 
