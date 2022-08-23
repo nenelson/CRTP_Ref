@@ -15,6 +15,7 @@ Commands and reference material useful for the CRTP course and Active Directory 
       - [Access Control Lists](#Access-Control-Lists)
     - [AD PowerShell Module](#Active-Directory-PowerShell-Module)
    - [Privilege Escalation](#Privilege-Escalation)  
+   - [Lateral Movement](#Lateral-Movement)
     - [Other Tooling](#Tooling)
       - [Bloodhound](#Bloodhound)
       - [Mimikatz](#Mimikatz)
@@ -171,6 +172,7 @@ Invoke-Privesc Check
 ```powershell 
 winPEASx64.exe
 ```
+## Lateral Movement
 ## Tooling 
 
 I found that the covered tooling in the course is sufficient for achieving CLI access across the hosts in the exam. However, some of the techniques and tools used in the course will not work in the exam due to .NET dependancies. 
