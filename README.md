@@ -14,6 +14,7 @@ Commands and reference material useful for the CRTP course and Active Directory 
       - [GPO](#Group-Policy-Objects)
       - [Access Control Lists](#Access-Control-Lists)
     - [AD PowerShell Module](#Active-Directory-PowerShell-Module)
+   - [Privilege Escalation](#Privilege-Escalation)  
     - [Other Tooling](#Tooling)
       - [Bloodhound](#Bloodhound)
       - [Mimikatz](#Mimikatz)
@@ -139,6 +140,9 @@ Get-NetGPO -GPOname "{<gplink>}"
 
 #### Active Directory PowerShell Module
 [Microsofts AD PowerShell](https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps) module can also be used for domain enumeration. 
+
+## Privilege Escalation
+
 
 ## Tooling 
 
