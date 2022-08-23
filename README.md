@@ -102,6 +102,8 @@ Invoke-UserHunter -GroupName <name>
 Invoke-UserHunter -CheckAccess
 Invoke-UserHunter -Stealth
 Find-LocalAdminACcess -Verbose
+Find-DomainUserLocation -Verbose
+Find-DomainUserLocation -UserGroupIdentity "Group"
 ```
 #### Share Enum
 
