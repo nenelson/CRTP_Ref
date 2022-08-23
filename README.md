@@ -145,7 +145,7 @@ Get-NetGPO -GPOname "{<gplink>}"
 Techniques relevant to abusing AD/system misconfiguration and normal Windows functionality to achieve privesc. 
 #### Privesc tools/scripts
 - [PowerUp](https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc)
-- [PrivEsx](https://github.com/enjoiz/Privesc)
+- [PrivEsc](https://github.com/enjoiz/Privesc)
 
 #### PowerView
 
