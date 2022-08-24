@@ -142,7 +142,7 @@ Get-NetGPO -GPOname "{<gplink>}"
 #### Active Directory PowerShell Module
 - [Microsofts AD PowerShell](https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps) module can also be used for domain enumeration. 
 
-## Privilege Escalation
+## Local Privilege Escalation
 Techniques relevant to abusing AD/system misconfiguration and normal Windows functionality to achieve privesc. 
 #### Privesc tools/scripts
 - [PowerUp](https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc)
@@ -173,6 +173,26 @@ Invoke-Privesc Check
 winPEASx64.exe
 ```
 ## Lateral Movement
+All the PS remoting 
+
+```powershell 
+$Sess = New-PSSession –Computername IP
+Invoke-Command –Session $Sess –ScriptBlock {$Proc = Get-Process}
+Invoke-Command –Session $Sess –ScriptBlock {$Proc.Name}
+```
+Execute commands/Files on remote hosts
+```powershell 
+Invoke-Command -Computername <computername> -Scriptblock {whoami} 
+Invoke-Command -Scriptblock {whoami} $sess
+
+Invoke-Command -Computername <computername> -FilePath <path>
+Invoke-Command -FilePath <path> $sess
+```
+Windows Remote Management ([winrs](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/winrs))
+
+```powershell 
+winrs -remote:server1 -u:server1\administrator - p:Pass@1234 hostname
+```
 ## Tooling 
 
 I found that the covered tooling in the course is sufficient for achieving CLI access across the hosts in the exam. However, some of the techniques and tools used in the course will not work in the exam due to .NET dependancies. 
