@@ -14,7 +14,7 @@ Command/tooling reference material useful for the CRTP course and Active Directo
       - [GPO](#Group-Policy-Objects)
       - [Access Control Lists](#Access-Control-Lists)
     - [AD PowerShell Module](#Active-Directory-PowerShell-Module)
-   - [Privilege Escalation](#Privilege-Escalation)  
+   - [Local Privilege Escalation](#Local-Privilege-Escalation)  
    - [Lateral Movement](#Lateral-Movement)
     - [Other Tooling](#Tooling)
       - [Bloodhound](#Bloodhound)
