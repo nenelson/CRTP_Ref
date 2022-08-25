@@ -193,6 +193,15 @@ Windows Remote Management ([winrs](https://docs.microsoft.com/en-us/windows-serv
 ```powershell 
 winrs -remote:server1 -u:server1\administrator - p:Pass@1234 hostname
 ```
+PsExec is always fun. Standalone or via Impacket.
+```powershell 
+psexec.py domain\user -target-ip IP -k -no-pass
+psexec.py domain\user@IP -hashes :cdeae556dc28c24b5b7b14e9df5b6e21
+psexec \\IP -accepteula -i -u domain\user -p pass cmd.exe
+psexec \\IP -accepteula -i -u domain\user -p pass cmd.exe /k "ipconfig"
+psexec \\IP -accepteula -i -u domain\user -p pass cmd.exe /k "C:\myscript.bat"
+
+```
 ## Tooling 
 
 I found that the covered tooling in the course is sufficient for achieving CLI access across the hosts in the exam. However, some of the techniques and tools used in the course will not work in the exam due to .NET dependancies. 
