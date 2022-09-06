@@ -15,7 +15,8 @@ Command/tooling reference material useful for the CRTP course and Active Directo
       - [Access Control Lists](#Access-Control-Lists)
     - [Windows CLI](#Windows-CLI)
     - [AD PowerShell Module](#Active-Directory-PowerShell-Module)
-   - [Local Privilege Escalation](#Local-Privilege-Escalation)  
+   - [Local Privilege Escalation](#Local-Privilege-Escalation) 
+   - [Credential Access](#Credential-Access)
    - [Lateral Movement](#Lateral-Movement)
     - [Other Tooling](#Tooling)
       - [Bloodhound](#Bloodhound)
@@ -73,6 +74,7 @@ Get-NetForestDomain -Verbose | Get-NetDomainTrust
 ```
 #### Users Groups Computers 
 ```powershell 
+Get-NetUser
 Get-NetUser -Username <username>
 Get-NetUser | select samaccountname
 Get-NetUser | select samaccountname, lastlogon, pwdlastset
@@ -138,10 +140,11 @@ Get-NetOU -Fulldata
 Get-NetOU StudentMachines | %{Get-NetComputer -ADSPath $_}
 Get-NetGPO -GPOname "{<gplink>}"
 ```
-
 #### Active Directory PowerShell Module
 - [Microsofts AD PowerShell](https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps) module can also be used for domain enumeration. 
-
+### Windows CLI
+```powershell 
+```
 ## Local Privilege Escalation
 Techniques relevant to abusing AD/system misconfiguration and normal Windows functionality to achieve privesc. 
 #### Privesc tools/scripts
@@ -174,6 +177,10 @@ Invoke-Privesc Check
 ```powershell 
 winPEASx64.exe
 ```
+## Credential Access 
+I would recommend becoming familiar with different tooling that can be used to dump creds. 
+
+
 ## Lateral Movement
 All the PS remoting 
 
