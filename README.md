@@ -9,7 +9,10 @@ Command/tooling reference material useful for the CRTP course and Active Directo
     - [Powerview](#Powerview)
       - [Domain](#Domain-Enum)
       - [Domain Trust](#Domain-Trust)
-      - [Users Groups Computers](#Users-Groups-Computers)
+      - [Users](#Users)
+      - [Computers](#Computers)
+      - [Groups](#Groups)
+      - [User Hunting](#User-Hunting)
       - [Share Enum](#Share-Enum)
       - [GPO](#Group-Policy-Objects)
       - [Access Control Lists](#Access-Control-Lists)
@@ -98,7 +101,7 @@ Get-LoggedonLocal -Computername <computername>
 Get-LastLoggedOn -ComputerName <computername>
 ```
 #### Groups
-
+```powershell
 Get-NetGroup
 Get-NetGroup -GroupName *admin*
 Get-NetGroup -Domain <domain>
@@ -107,7 +110,7 @@ Get-NetGroupMember -Groupname "Domain Admins" -Recurse | select MemberName
 Get-NetGroup -Username <username>
 Get-NetlocalGroup -Computername <computername> -ListGroups
 Get-NetlocalGroup -Computername <computername> -Recurse
-
+```
 #### User Hunting
 ```powershell
 Invoke-UserHunter
