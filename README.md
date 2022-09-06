@@ -72,7 +72,7 @@ Get-NetForestTrust
 Get-NetForestTrust -Forest <domain name>
 Get-NetForestDomain -Verbose | Get-NetDomainTrust
 ```
-#### Users Groups Computers 
+#### Users 
 ```powershell 
 Get-NetUser
 Get-NetUser -Username <username>
@@ -80,16 +80,25 @@ Get-NetUser | select samaccountname
 Get-NetUser | select samaccountname, lastlogon, pwdlastset
 Get-NetUser | select samaccountname, lastlogon, pwdlastset | Sort-Object -Property lastlogon
 Get-NetUser | select samaccountname, memberof
-Get-NetDomainController
-Get-NetDomainController | select-object Name
+Get-netuser | Select-Object samaccountname,description
 get-userproperty -Properties pwdlastset
 Find-UserField -SearchField Description -SearchTerm "built"
-Get-netuser | Select-Object samaccountname,description
+```
+#### Computers
+```powershell 
+Get-NetDomainController
+Get-NetDomainController | select-object Name
 Get-NetComputer
 Get-NetComputer -FullData
 Get-NetComputer -Computername <computername> -FullData
 Get-NetComputer -OperatingSystem "*Server 2016*"
 Get-NetComputer -fulldata | select samaccountname, operatingsystem, operatingsystemversion
+Get-NetLoggedon -Computername <computername>
+Get-LoggedonLocal -Computername <computername>
+Get-LastLoggedOn -ComputerName <computername>
+```
+#### Groups
+
 Get-NetGroup
 Get-NetGroup -GroupName *admin*
 Get-NetGroup -Domain <domain>
@@ -98,14 +107,14 @@ Get-NetGroupMember -Groupname "Domain Admins" -Recurse | select MemberName
 Get-NetGroup -Username <username>
 Get-NetlocalGroup -Computername <computername> -ListGroups
 Get-NetlocalGroup -Computername <computername> -Recurse
-Get-NetLoggedon -Computername <computername>
-Get-LoggedonLocal -Computername <computername>
-Get-LastLoggedOn -ComputerName <computername>
+
+#### User Hunting
+```powershell
 Invoke-UserHunter
 Invoke-UserHunter -GroupName <name>
 Invoke-UserHunter -CheckAccess
 Invoke-UserHunter -Stealth
-Find-LocalAdminACcess -Verbose
+Find-LocalAdminAccess -Verbose
 Find-DomainUserLocation -Verbose
 Find-DomainUserLocation -UserGroupIdentity "Group"
 ```
