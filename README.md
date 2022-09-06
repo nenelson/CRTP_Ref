@@ -13,6 +13,7 @@ Command/tooling reference material useful for the CRTP course and Active Directo
       - [Share Enum](#Share-Enum)
       - [GPO](#Group-Policy-Objects)
       - [Access Control Lists](#Access-Control-Lists)
+    - [Windows CLI](#Windows-CLI)
     - [AD PowerShell Module](#Active-Directory-PowerShell-Module)
    - [Local Privilege Escalation](#Local-Privilege-Escalation)  
    - [Lateral Movement](#Lateral-Movement)
@@ -53,9 +54,9 @@ Powerview is referenced quite a bit in the course material, but the Microsoft-si
 
 ```powershell 
 Get-NetDomain
-Get-NetDomain -Domain <domainname>
 Get-DomainSID
 Get-DomainPolicy (Get-DomainPolicy)."System Access" net accounts
+Get-NetDomain -Domain <domainname>
 ```
 #### Domain Trust
 
@@ -72,14 +73,13 @@ Get-NetForestDomain -Verbose | Get-NetDomainTrust
 ```
 #### Users Groups Computers 
 ```powershell 
-Get-NetDomainController
-Get-NetDomainController | select-object Name
-Get-NetUser
 Get-NetUser -Username <username>
 Get-NetUser | select samaccountname
 Get-NetUser | select samaccountname, lastlogon, pwdlastset
 Get-NetUser | select samaccountname, lastlogon, pwdlastset | Sort-Object -Property lastlogon
 Get-NetUser | select samaccountname, memberof
+Get-NetDomainController
+Get-NetDomainController | select-object Name
 get-userproperty -Properties pwdlastset
 Find-UserField -SearchField Description -SearchTerm "built"
 Get-netuser | Select-Object samaccountname,description
@@ -158,7 +158,9 @@ Get-ModifiableService -Verbose
 
 #### PowerUp
 ```powershell 
+. .\PowerUp.ps1
 Invoke-AllChecks
+Invoke-ServiceAbuse -name 'service' -UserName 'user'
 ```
 #### Privesc
 ```powershell 
