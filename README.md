@@ -155,7 +155,16 @@ Get-NetGPO -GPOname "{<gplink>}"
 #### Active Directory PowerShell Module
 - [Microsofts AD PowerShell](https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps) module can also be used for domain enumeration. 
 ### Windows CLI
+Useful post-exploitation commands
+Windows Defender
 ```powershell 
+#Disable Windows Defender
+Set-MpPreference -DisableRealtimeMonitoring $true
+#Check exclusion paths 
+Get-MpPreference | select-object -ExpandProperty ExclusionPath
+#Add Exclusion Path
+Add-MpPreference -ExclusionPath "path"
+
 ```
 ## Local Privilege Escalation
 Techniques relevant to abusing AD/system misconfiguration and normal Windows functionality to achieve privesc. 
