@@ -19,6 +19,9 @@ Command/tooling reference material useful for the CRTP course and Active Directo
     - [Windows CLI](#Windows-CLI)
     - [AD PowerShell Module](#Active-Directory-PowerShell-Module)
    - [Local Privilege Escalation](#Local-Privilege-Escalation) 
+   - [Domain Privilege Escalation](#Domain-Privilege-Escalation)
+     - [Unconstrained Delegation](#Unconstrained-Delegation)
+     - [Constrained Delegation](#Constrained-Delegation)
    - [Credential Access](#Credential-Access)
      - [Mimikatz](#Mimikatz)
    - [Lateral Movement](#Lateral-Movement)
@@ -198,6 +201,9 @@ Invoke-Privesc Check
 ```powershell 
 winPEASx64.exe
 ```
+## Domain Privilege Escalation
+### Unconstrained Delegation
+### Constrained Delegation 
 ## Credential Access 
 I would recommend becoming familiar with different tooling that can be used to dump creds. 
 ### Mimikatz 
