@@ -224,6 +224,16 @@ Invoke-Mimikatz -Command '"kerberos::ptt <kirbi file>"'
 ```
 ### Constrained Delegation 
 Constrained delegation allows the account with the “Trust this user/computer for delegation to specified services only” enabled to impersonate ANY user to access specific services listed in the allowable delegation list.
+#### Enumerate Users
+```powershell
+Get-DomainUser -TrustedToAuth
+Get-DomainUser -TrustedToAuth | select samaccountname, msds-allowedtodelegateto
+```
+#### Enumerate Computers
+```powershell
+Get-Domaincomputer -TrustedToAuth
+Get-Domaincomputer -TrustedToAuth | select samaccountname, msds-allowedtodelegateto
+```
 ## Credential Access 
 I would recommend becoming familiar with different tooling that can be used to dump creds. 
 ### Mimikatz 
