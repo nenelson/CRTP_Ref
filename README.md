@@ -303,6 +303,7 @@ Windows Remote Management ([winrs](https://docs.microsoft.com/en-us/windows-serv
 
 ```powershell 
 winrs -remote:server1 -u:server1\administrator - p:Pass@1234 hostname
+winrs -r:host cmd
 ```
 PsExec is always fun. Standalone or via Impacket.
 ```powershell 
