@@ -293,6 +293,7 @@ Set up Bloodhound/Neo4J on your host before the exam. I ran in to an issue invol
 ```powershell 
 #Start neo4j 
 ./neo4j console 
+#if java version issues, jabba use openjdk@1.11.0
 #Run collectors 
 . ./sharphound.ps1
 Invoke-Bloodhound -CollectionMethod all -Verbose
