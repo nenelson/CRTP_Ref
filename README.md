@@ -183,6 +183,10 @@ echo F | xcopy path \\hostt\C$\Users\Public\file.exe
 reg query HKLM\Software\Policies\Microsoft\Windows\SRPV2
 Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCollections
 ```
+#### Disable Windows Firewall
+```powershell
+netsh advfirewall set allprofiles state off
+```
 ## Local Privilege Escalation
 Techniques relevant to abusing AD/system misconfiguration and normal Windows functionality to achieve privesc. 
 #### Privesc tools/scripts
