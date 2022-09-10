@@ -175,6 +175,7 @@ Add-MpPreference -ExclusionPath "path"
 #### File Copy
 ```powershell
 Copy-Item .\script.ps1 \\<servername>\c$\'Program Files'
+echo F | xcopy path \\hostt\C$\Users\Public\file.exe
 ```
 #### Check if AppLocker configured
 ```powershell
