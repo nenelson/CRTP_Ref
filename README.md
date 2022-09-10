@@ -93,6 +93,7 @@ Get-DomainUser | select -ExpandProperty samaccountname
 ```
 #### Computers
 ```powershell 
+Get-DomainComputer | select -ExpandProperty dnshostname
 Get-NetDomainController
 Get-NetDomainController | select-object Name
 Get-NetComputer
