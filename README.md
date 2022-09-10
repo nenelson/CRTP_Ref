@@ -163,7 +163,7 @@ Get-NetGPO -GPOname "{<gplink>}"
 - [Microsofts AD PowerShell](https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps) module can also be used for domain enumeration. 
 ### Windows CLI
 Useful post-exploitation commands
-####Windows Defender
+#### Windows Defender
 ```powershell 
 #Disable Windows Defender
 Set-MpPreference -DisableRealtimeMonitoring $true
@@ -172,9 +172,15 @@ Get-MpPreference | select-object -ExpandProperty ExclusionPath
 #Add Exclusion Path
 Add-MpPreference -ExclusionPath "path"
 ```
-File Copy
+#### File Copy
 ```powershell
 Copy-Item .\script.ps1 \\<servername>\c$\'Program Files'
+```
+#### Check if AppLocker configured
+```powershell
+#hunt for overly permissive policies
+reg query HKLM\Software\Policies\Microsoft\Windows\SRPV2
+Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCollections
 ```
 ## Local Privilege Escalation
 Techniques relevant to abusing AD/system misconfiguration and normal Windows functionality to achieve privesc. 
