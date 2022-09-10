@@ -107,6 +107,8 @@ Get-LastLoggedOn -ComputerName <computername>
 ```
 #### Groups
 ```powershell
+Get-DomainGroup -Identity "Domain Admins"
+Get-DomainGroupMember -Identity "Domain Admins"
 Get-NetGroup
 Get-NetGroup -GroupName *admin*
 Get-NetGroup -Domain <domain>
