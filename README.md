@@ -89,6 +89,7 @@ Get-NetUser | select samaccountname, memberof
 Get-netuser | Select-Object samaccountname,description
 get-userproperty -Properties pwdlastset
 Find-UserField -SearchField Description -SearchTerm "built"
+Get-DomainUser | select -ExpandProperty samaccountname
 ```
 #### Computers
 ```powershell 
