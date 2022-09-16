@@ -174,6 +174,10 @@ Get-MpPreference | select-object -ExpandProperty ExclusionPath
 #Add Exclusion Path
 Add-MpPreference -ExclusionPath "path"
 ```
+#### Windows Firewall
+```powershell 
+#### Add redirect in HBFW for specific port/ip
+netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=80 connectaddress=172.16.100.x
 #### File Copy
 ```powershell
 Copy-Item .\script.ps1 \\<servername>\c$\'Program Files'
