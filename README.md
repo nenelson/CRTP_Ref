@@ -399,3 +399,4 @@ Invoke-Bloodhound -CollectionMethod LoggedOn -Verbose
 - [User Hunting](https://sixdub.medium.com/derivative-local-admin-cdd09445aac8)
 - [PowerShell Constrained Language Mode](https://devblogs.microsoft.com/powershell/powershell-constrained-language-mode/)
 - [PowerShell Obfuscation (Invoke-Obfuscation)](https://github.com/danielbohannon/Invoke-Obfuscation) 
+- [OverPass-the-Hash](https://stealthbits.com/blog/how-to-detect-overpass-the-hash-attacks/)
