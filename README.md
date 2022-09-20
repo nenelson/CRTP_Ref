@@ -25,6 +25,8 @@ Command/tooling reference material useful for the CRTP course and Active Directo
      - [OverPass-the-Hash](#OverPass-the-Hash)
      - [ACL](#ACL)
         - [SecurityDescriptor - WMI](#Security-Descriptor--WMI)
+        - [SecurityDescriptor - PowerShell Remoting](#Security-Descriptor--PowerShell-Remoting)
+        - [SecurityDescriptor - RemoteRegBackdoor](#Security-Descriptor--RemoteRegBackdoor)
    - [Domain Privilege Escalation](#Domain-Privilege-Escalation)
      - [Unconstrained Delegation](#Unconstrained-Delegation)
      - [Constrained Delegation](#Constrained-Delegation)
