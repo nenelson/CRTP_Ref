@@ -29,7 +29,7 @@ Command/tooling reference material useful for the CRTP course and Active Directo
      - [Constrained Delegation](#Constrained-Delegation)
    - [Credential Access](#Credential-Access)
      - [Mimikatz](#Mimikatz)
-     - [DCSync](#DCSync]
+     - [DCSync](#DCSync)
    - [Lateral Movement](#Lateral-Movement)
    - [Other Tooling](#Tooling)
       - [Bloodhound](#Bloodhound)
