@@ -24,9 +24,9 @@ Command/tooling reference material useful for the CRTP course and Active Directo
      - [Silver Ticket](#Silver-Ticket)
      - [OverPass-the-Hash](#OverPass-the-Hash)
      - [ACL](#ACL)
-        - [SecurityDescriptor - WMI](#Security-Descriptor--WMI)
-        - [SecurityDescriptor - PowerShell Remoting](#Security-Descriptor--PowerShell-Remoting)
-        - [SecurityDescriptor - RemoteRegBackdoor](#Security-Descriptor--RemoteRegBackdoor)
+        - [SecurityDescriptor - WMI](#SecurityDescriptor--WMI)
+        - [SecurityDescriptor - PowerShell Remoting](#SecurityDescriptor--PowerShell-Remoting)
+        - [SecurityDescriptor - RemoteRegBackdoor](#SecurityDescriptor--RemoteRegBackdoor)
    - [Domain Privilege Escalation](#Domain-Privilege-Escalation)
      - [Unconstrained Delegation](#Unconstrained-Delegation)
      - [Constrained Delegation](#Constrained-Delegation)
@@ -288,7 +288,7 @@ Set-RemoteWMI -SamAccountName studentx -ComputerName dcorp-dc.dollarcorp.moneyco
 Set-RemotePSRemoting –SamAccountName studentx -ComputerName dcorp-dc.dollarcorp.moneycorp.local -Verbose
 ```
 #### SecurityDescriptor - Remote Registry
-Use DAMP(#https://github.com/HarmJ0y/DAMP) toolkit
+Use [DAMP](https://github.com/HarmJ0y/DAMP) toolkit
 ```powershell
 Add-RemoteRegBackdoor -ComputerName dcorp-dc.dollarcorp.moneycorp.local -Trustee studentx -Verbose
 # Get Hash of Machine Account
