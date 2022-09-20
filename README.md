@@ -24,7 +24,7 @@ Command/tooling reference material useful for the CRTP course and Active Directo
      - [Silver Ticket](#Silver-Ticket)
      - [OverPass-the-Hash](#OverPass-the-Hash)
      - [ACL](#ACL)
-        - [SecurityDescriptor - WMI](#SecurityDescriptor--WMI)
+        - [SecurityDescriptor - WMI](#SecurityDescriptor---WMI)
         - [SecurityDescriptor - PowerShell Remoting](#SecurityDescriptor--PowerShell-Remoting)
         - [SecurityDescriptor - RemoteRegBackdoor](#SecurityDescriptor--RemoteRegBackdoor)
    - [Domain Privilege Escalation](#Domain-Privilege-Escalation)
