@@ -30,6 +30,7 @@ Command/tooling reference material useful for the CRTP course and Active Directo
    - [Domain Privilege Escalation](#Domain-Privilege-Escalation)
      - [Unconstrained Delegation](#Unconstrained-Delegation)
      - [Constrained Delegation](#Constrained-Delegation)
+     - [Kerberoasting](#Kerberoasting)
    - [Credential Access](#Credential-Access)
      - [Mimikatz](#Mimikatz)
      - [DCSync](#DCSync)
@@ -320,7 +321,10 @@ Get-DomainUser -TrustedToAuth | select samaccountname, msds-allowedtodelegateto
 Get-Domaincomputer -TrustedToAuth
 Get-Domaincomputer -TrustedToAuth | select samaccountname, msds-allowedtodelegateto
 ```
-
+### Kerberoasting
+Find services running with user accounts 
+```powershell
+```
 ## Credential Access 
 I would recommend becoming familiar with different tooling that can be used to dump creds. 
 ### Mimikatz 
